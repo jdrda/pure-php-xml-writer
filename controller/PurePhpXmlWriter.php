@@ -132,7 +132,7 @@ class PurePhpXmlWriter
         /**
          * Set standard XML header if not defined
          */
-        if($fileHeader == null){
+        if($fileHeader === null){
             $this->_fileHeader = '<?xml version="1.0" encoding="' . $this->_encoding .'"?>';
         }
         else{
@@ -174,7 +174,7 @@ class PurePhpXmlWriter
         /**
          * Generate filename if needed
          */
-        if($fileName == null){
+        if($fileName === null){
             $this->setFileName(tempnam(sys_get_temp_dir(), $this->_fileNamePrefix));
         }
         else{
@@ -210,7 +210,7 @@ class PurePhpXmlWriter
             die('File cannot be opened: ' . $e->getMessage());
         }
 
-        if($autoAddHeader == true){
+        if($autoAddHeader === true){
             $this->writeHeader();
         }
     }
@@ -219,7 +219,7 @@ class PurePhpXmlWriter
      * Close XML file if is opened
      */
     public function closeFile(){
-        if(is_resource($this->_filePointer) == true){
+        if(is_resource($this->_filePointer) === true){
             fclose($this->_filePointer);
         }
     }
@@ -228,7 +228,7 @@ class PurePhpXmlWriter
      * Write the EOL if file is not compressed
      */
     private function _writeEol(){
-        if($this->_isCompressed == false){
+        if($this->_isCompressed === false){
             fwrite($this->_filePointer, PHP_EOL);
         }
     }
@@ -237,7 +237,7 @@ class PurePhpXmlWriter
      * Write the Tabs if file is not compressed
      */
     private function _writeTabs(){
-        if($this->_isCompressed == false){
+        if($this->_isCompressed === false){
             for($a = 0; $a < $this->_elementDeep; $a++) {
                 fwrite($this->_filePointer, "\t");
             }
@@ -252,13 +252,13 @@ class PurePhpXmlWriter
      * @param bool $useEol Indicates if use EOL
      */
     private function _writeString($string = '', $useTabs = true, $useEol = true){
-        if($useTabs == true){
+        if($useTabs === true){
             $this->_writeTabs();
         }
 
         fwrite($this->_filePointer, $string);
 
-        if($useEol == true){
+        if($useEol === true){
             $this->_writeEol();
         }
     }
@@ -326,7 +326,7 @@ class PurePhpXmlWriter
         /**
          * Non-empty element
          */
-        if( $useCdata == true && (is_numeric($value) == false || $forceCdata == true) ){
+        if( $useCdata === true && (is_numeric($value) === false || $forceCdata === true) ){
             if(is_numeric($value) == true){
                 $completeValue = '<![CDATA[' . number_format($value, $decimals) . ']]>';
             }
@@ -335,7 +335,7 @@ class PurePhpXmlWriter
             }
         }
         else{
-            if(is_numeric($value) == true) {
+            if(is_numeric($value) === true) {
                 $completeValue = number_format($value, $decimals);
             }
             else{
