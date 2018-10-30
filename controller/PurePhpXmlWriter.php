@@ -125,7 +125,7 @@ class PurePhpXmlWriter
     /**
      * Set file header
      *
-     * @param null $fileHeader
+     * @param string $fileHeader
      */
     public function setHeader($fileHeader = null){
 
@@ -152,7 +152,7 @@ class PurePhpXmlWriter
     /**
      * Constructor
      *
-     * @param null $fileName
+     * @param string $fileName
      * @param bool $autoOpenFile Indicates if file should be opened immediately
      * @param string $encoding
      * @param string $fileNamePrefix
@@ -184,7 +184,9 @@ class PurePhpXmlWriter
         /**
          * Autoopen file if needed
          */
-        $this->openFile();
+        if($autoOpenFile === true) {
+            $this->openFile();
+        }
     }
 
     /**
@@ -204,7 +206,7 @@ class PurePhpXmlWriter
         try {
             $this->_filePointer = fopen($this->_fileName, $this->_writeMode);
         }
-        catch (Exception $e){
+        catch (\Exception $e){
             die('File cannot be opened: ' . $e->getMessage());
         }
 
