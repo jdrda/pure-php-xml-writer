@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<products>
+	<product>
+		<name><![CDATA[Breakfast white mug]]></name>
+		<description><![CDATA[Nice white mug used for breakfast]]></description>
+		<price>5.00</price>
+		<category><![CDATA[Mugs|Breakfast]]></category>
+		<quantity>20</quantity>
+	</product>
+	<product>
+		<name><![CDATA[Puma T-shirt]]></name>
+		<description><![CDATA[Puma t-shirt with some sizes]]></description>
+		<price>10.00</price>
+		<category><![CDATA[T-shirts|Nike]]></category>
+		<quantity>10</quantity>
+		<sizes>
+			<size>
+				<size_name><![CDATA[S]]></size_name>
+				<size_price>10</size_price>
+			</size>
+			<size>
+				<size_name><![CDATA[M]]></size_name>
+				<size_price>11</size_price>
+			</size>
+			<size>
+				<size_name><![CDATA[L]]></size_name>
+				<size_price>13</size_price>
+			</size>
+		</sizes>
+	</product>
+</products>

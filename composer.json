@@ -1,0 +1,28 @@
+{
+    "name": "jan-drda/pure-php-xml-writer",
+    "description": "Simple XML writer library written with basic PHP functions only.",
+    "type": "library",
+    "keywords": ["xml", "xml writer", "pure php"],
+    "homepage": "https://github.com/jdrda/pure-php-xml-writer",
+    "readme": "https://github.com/jdrda/pure-php-xml-writer/blob/master/README.md",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jan Drda",
+            "email": "jdrda@outlook.com",
+            "homepage": "https://jdrda.tk",
+            "role": "chief developer"
+        }
+    ],
+    "support": {
+        "email": "jdrda@outlook.com",
+        "issues": "https://github.com/jdrda/pure-php-xml-writer/issues",
+        "wiki": "https://github.com/jdrda/pure-php-xml-writer/wiki"
+    },
+    "autoload": {
+        "psr-4": {
+            "PurePhpXmlWriter\\": "controller/"
+        }
+    },
+    "require": {}
+}
