@@ -6,7 +6,8 @@ Simple XML writer library written with basic PHP functions only
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/A067ES5)
 
 Please see example.php for basic usage, I am working at documentation (copying there):
-```/**
+```php
+/**
  * Composer autoload (only if you do not use it anywhere else)
  *
  * It is needed for namespace mapping
