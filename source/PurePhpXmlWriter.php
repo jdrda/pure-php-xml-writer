@@ -322,30 +322,29 @@ class PurePhpXmlWriter
         if (empty($value)) {
             $this->blankXMLElement($tag);
         }
+        else {
 
-        /**
-         * Non-empty element
-         */
-        if( $useCdata === true && (is_numeric($value) === false || $forceCdata === true) ){
-            if(is_numeric($value) == true){
-                $completeValue = '<![CDATA[' . round($value, $decimals) . ']]>';
+            /**
+             * Non-empty element
+             */
+            if ($useCdata === true && (is_numeric($value) === false || $forceCdata === true)) {
+                if (is_numeric($value) == true) {
+                    $completeValue = '<![CDATA[' . round($value, $decimals) . ']]>';
+                } else {
+                    $completeValue = '<![CDATA[' . $value . ']]>';
+                }
+            } else {
+                if (is_numeric($value) === true) {
+                    $completeValue = round($value, $decimals);
+                } else {
+                    $completeValue = $value;
+                }
             }
-            else {
-                $completeValue = '<![CDATA[' . $value . ']]>';
-            }
-        }
-        else{
-            if(is_numeric($value) === true) {
-                $completeValue = round($value, $decimals);
-            }
-            else{
-                $completeValue = $value;
-            }
-        }
 
-        $this->openXMLElement($tag, false);
-        $this->_writeString($completeValue, false, false);
-        $this->closeXMLElement($tag, false);
+            $this->openXMLElement($tag, false);
+            $this->_writeString($completeValue, false, false);
+            $this->closeXMLElement($tag, false);
+        }
     }
 
 }
