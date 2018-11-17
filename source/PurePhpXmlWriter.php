@@ -328,7 +328,7 @@ class PurePhpXmlWriter
          */
         if( $useCdata === true && (is_numeric($value) === false || $forceCdata === true) ){
             if(is_numeric($value) == true){
-                $completeValue = '<![CDATA[' . number_format($value, $decimals) . ']]>';
+                $completeValue = '<![CDATA[' . round($value, $decimals) . ']]>';
             }
             else {
                 $completeValue = '<![CDATA[' . $value . ']]>';
@@ -336,7 +336,7 @@ class PurePhpXmlWriter
         }
         else{
             if(is_numeric($value) === true) {
-                $completeValue = number_format($value, $decimals);
+                $completeValue = round($value, $decimals);
             }
             else{
                 $completeValue = $value;
