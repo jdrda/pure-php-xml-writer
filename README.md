@@ -5,6 +5,16 @@ Simple XML writer library written with basic PHP functions only
 
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/A067ES5)
 
+## Instalation
+```
+composer require jan-drda/pure-php-xml-writer
+```
+Then copy example.php to your project root directory. You can modify it upon your requirements and run.
+### If you do not have Composer
+Install it, it is very simple:
+https://getcomposer.org/doc/00-intro.md
+
+## Documentantion
 Please see example.php for basic usage, I am working at documentation (copying there):
 ```php
 /**
