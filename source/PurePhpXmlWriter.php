@@ -319,7 +319,7 @@ class PurePhpXmlWriter
         /**
          * Empty element
          */
-        if (empty($value)) {
+        if (is_numeric($value) === false && empty($value) === true) {
             $this->blankXMLElement($tag);
         }
         else {
