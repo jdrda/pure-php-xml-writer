@@ -1,3 +1,6 @@
+[![License](https://poser.pugx.org/jan-drda/pure-php-xml-writer/license)](https://packagist.org/packages/jan-drda/pure-php-xml-writer)
+[![Latest Stable Version](https://poser.pugx.org/jan-drda/pure-php-xml-writer/v/stable)](https://packagist.org/packages/jan-drda/pure-php-xml-writer)
+[![Total Downloads](https://poser.pugx.org/jan-drda/pure-php-xml-writer/downloads)](https://packagist.org/packages/jan-drda/pure-php-xml-writer)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jdrda/pure-php-xml-writer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jdrda/pure-php-xml-writer/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/jdrda/pure-php-xml-writer/badges/build.png?b=master)](https://scrutinizer-ci.com/g/jdrda/pure-php-xml-writer/build-status/master)
 
 # Pure PHP XML Writer
@@ -5,6 +8,16 @@ Simple XML writer library written with basic PHP functions only
 
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/A067ES5)
 
+## Installation
+```
+composer require jan-drda/pure-php-xml-writer
+```
+Then copy example.php to your project root directory. You can modify it upon your requirements and run.
+### If you do not have Composer
+Install it, it is very simple:
+https://getcomposer.org/doc/00-intro.md
+
+## Documentantion
 Please see example.php for basic usage, I am working at documentation (copying there):
 ```php
 /**
