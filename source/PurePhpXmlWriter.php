@@ -263,6 +263,39 @@ class PurePhpXmlWriter
         }
     }
 
+	/**
+	 * Determines if an array is associative.
+	 * @param  array  $array
+	 * @return bool
+	 */
+	function isAssoc(array $array)
+	{
+		$keys = array_keys($array);
+
+		return array_keys($keys) !== $keys;
+	}
+
+	/**
+	 * Concatenates the attribute - value pairs into a string
+	 *
+	 * @param array $attr
+	 */
+    private function _getAttributes ($attr = null)
+    {
+	      $str = '';
+
+	      if(!is_null($attr) && is_array($attr)) {
+	      	  // check if is an associative array
+		        if($this->isAssoc($attr)) {
+			      	  foreach ($attr as $name => $value) {
+					          $str .= ' ' . $name . '="' . str_replace('"', "'", $value) . '"';
+				        }
+		        }
+	      }
+
+	      return $str;
+    }
+
     /**
      * Write file header
      */
@@ -275,10 +308,11 @@ class PurePhpXmlWriter
      *
      * @param $tag
      * @param bool $expectedChildren Indicates if children are expected
+     * @param array $attr associative array with attribute - value pairs
      */
-    public function openXMLElement($tag, $expectedChildren = true)
+    public function openXMLElement($tag, $expectedChildren = true, $attr = null)
     {
-        $this->_writeString('<' . $tag . '>', true, $expectedChildren);
+        $this->_writeString('<' . $tag . $this->_getAttributes($attr) . '>', true, $expectedChildren);
         $this->_elementDeep++;
     }
 
@@ -298,10 +332,11 @@ class PurePhpXmlWriter
      * Write blank XML element
      *
      * @param $tag
+     * @param array $attr associative array with attribute - value pairs
      */
-    public function blankXMLElement($tag)
+    public function blankXMLElement($tag, $attr = null)
     {
-        $this->_writeString('<' . $tag . '/>', true,true);
+        $this->_writeString('<' . $tag . $this->_getAttributes($attr) . '/>', true,true);
 
     }
 
